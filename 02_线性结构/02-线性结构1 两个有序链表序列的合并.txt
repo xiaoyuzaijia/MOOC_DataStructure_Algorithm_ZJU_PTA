@@ -1,0 +1,78 @@
+// List Read(){
+//     List L;
+//     PtrToNode R, N;
+//     int i, n;
+    
+//     L = (PtrToNode)malloc(sizeof(struct Node));
+//     L->Next = NULL;
+    
+//     R=L;
+//     scanf("%d", &n);
+//     for (i = 0; i < n; i++){
+//         N = (PtrToNode)malloc(sizeof(struct Node));
+//         scanf("%d", &(N->Data));
+//         N->Next = NULL;
+//         R->Next = N;
+//         R = R->Next;
+//     }
+    
+//     L = L->Next;
+//     return L;
+// }
+
+// void Print( List L){
+//     PtrToNode T;
+    
+//     T = L;
+//     if (L){
+//         while (T){
+//             printf("%d ", T->Data);
+//             T = T->Next;
+//         }
+//     }
+//     else {
+//         printf("NULL");
+//     }
+//     printf("\n");
+// }
+
+//前面两个函数不用写,题目自带,但是题目自带的函数要求传入的链表都是第一个节点为空的链表(很坑...)
+
+List Merge( List L1, List L2 ){
+    List L;
+    PtrToNode R, P1, P2;
+    
+    L = (PtrToNode)malloc(sizeof(struct Node));
+    L->Next = NULL;
+    
+    R = L;
+    P1 = L1->Next;
+    P2 = L2->Next;
+    while (P1 && P2){
+        if (P1->Data < P2->Data){
+            R->Next = P1;
+            R = R->Next;
+            P1 = P1->Next;
+        }
+        else {
+            R->Next = P2;
+            R = R->Next;
+            P2 = P2->Next;
+        }
+    }
+    while (P1){
+        R->Next = P1;
+        R = R->Next;
+        P1 = P1->Next;
+    }
+    while (P2){
+        R->Next = P2;
+        R = R->Next;
+        P2 = P2->Next;
+    }
+    
+    R->Next = NULL;
+    L1->Next = NULL;
+    L2->Next = NULL;
+    return L;
+}

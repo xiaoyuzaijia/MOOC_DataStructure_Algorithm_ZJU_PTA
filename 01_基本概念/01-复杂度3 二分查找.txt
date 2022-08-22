@@ -1,0 +1,30 @@
+Position BinarySearch( List L, ElementType X ){
+    Position left = 1;
+    Position right = L->Last;
+    Position mid = (left + right) / 2;
+    Position index = 0;
+    int found = 0;
+    
+    while ((!found) && (left <= right)){
+        if (L->Data[mid] == X){
+            found = 1;
+            index = mid;
+        }
+        else{
+            if (L->Data[mid] > X){
+                right = mid -1;
+                mid = (left + right) / 2;
+            }
+            if (L->Data[mid] < X){
+                left = mid + 1;
+                mid = (left + right) / 2;
+            }
+        }
+    }
+    if (found){
+        return index;
+    }
+    else {
+        return NotFound;
+    }
+}
