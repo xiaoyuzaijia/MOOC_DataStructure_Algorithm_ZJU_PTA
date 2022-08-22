@@ -2,8 +2,8 @@
 
  
 
-[中国大学MOOC课程]:(https://www.icourse163.org/course/ZJU-93001)
-[PTA课后练习]:(https://pintia.cn/)
+[中国大学MOOC课程](https://www.icourse163.org/course/ZJU-93001)
+[PTA课后练习](https://pintia.cn/)
 
 对所有课后练习编程题都使用python完成,截止目前仅有两个测试点超时,其余全部通过.
 
