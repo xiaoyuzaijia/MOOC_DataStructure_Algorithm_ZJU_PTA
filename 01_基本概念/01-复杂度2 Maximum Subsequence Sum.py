@@ -23,4 +23,4 @@ if maxSum == -1 :   # 如果为全负序列,maxSum不会更新,永远是-1
     maxSum = 0
     head = 1
     rear = k
-print(str(maxSum) + ' ' + str(l[head]) + ' ' + str(l[rear]))
+print(maxSum, l[head], l[rear])
